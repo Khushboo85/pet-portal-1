@@ -20,6 +20,7 @@ import { getUser, setDataInLocalStorage } from '../helper';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { UserRole } from 'src/constants/roles';
+import logger from 'src/logger';
 
 function Copyright() {
   return (
@@ -67,6 +68,8 @@ export default function SignIn() {
         .auth()
         .signInWithEmailAndPassword(values.email, values.password);
       if (loginInfo && loginInfo.user) {
+        logger.push({ error : "error", info : "info" });
+        //logger.info("User logged");
         const userData = await fire
           .firestore()
           .collection('user')

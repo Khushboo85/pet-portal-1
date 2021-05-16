@@ -9,4 +9,4 @@
       
     - name: spin up application using docker-compose 
       shell:
-        cmd: docker run -d -it  -p 90:80/tcp khushalways/pet-portal-dockerimage
+              cmd: docker run -d -it  -p 80:80/tcp khushalways/pet-portal-dockerimage
