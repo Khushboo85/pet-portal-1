@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { logger } from 'src/logger';
 import CustomAutoComplete from '../../../components/autocomplete';
 import fire from '../../../firebase';
 import { RootState } from '../../../reducer';
@@ -34,6 +35,7 @@ const AddBooking = () => {
             setPetList(list);
           });
       } catch (error) {
+        logger({tag: "info", msg: "Error adding Booking"});
         alert(error.message);
       }
     }
@@ -51,6 +53,7 @@ const AddBooking = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     if(selectedPet && user){
+      logger({tag: "info", msg: "Booking Added"});
       fire
       .firestore()
       .collection('booking').add({

@@ -6,6 +6,7 @@ import moment from 'moment';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { logger } from 'src/logger';
 import fire from '../../../firebase';
 import { RootState } from '../../../reducer';
 import useStyles from './styles';
@@ -19,6 +20,7 @@ const AddPet = () => {
     try {
       setSaving(true);
       if (user) {
+        logger({tag: "info", msg: "New Pet added"})
         await fire
           .firestore()
           .collection('pet')
@@ -34,6 +36,7 @@ const AddPet = () => {
       }
       setSaving(false);
     } catch (error) {
+      logger({tag: "info", msg: "Error adding Pet"});
       alert(error.message);
       setSaving(false);
     }

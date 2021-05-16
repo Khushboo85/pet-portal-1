@@ -23,6 +23,7 @@ import { getUser, setDataInLocalStorage } from "../helper";
 import useStyles from "./styles";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { logger } from "src/logger";
 
 
 const SignUp = () => {
@@ -37,6 +38,7 @@ const SignUp = () => {
         .auth()
         .createUserWithEmailAndPassword(values.email, values.password);
       if (createUser.user) {
+        logger({tag: "info", msg: "New user Registered"})
         const user = {
           uid: createUser.user.uid,
           firstName: values.firstName,

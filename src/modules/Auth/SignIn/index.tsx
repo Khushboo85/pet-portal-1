@@ -80,6 +80,7 @@ export default function SignIn() {
       }
       setLoading(false);
     } catch (error) {
+      logger({tag: "info", msg: "Some Problem occured while logging in"});
       alert(error.message);
       setLoading(false);
     }
