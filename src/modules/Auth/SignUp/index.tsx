@@ -24,18 +24,6 @@ import useStyles from "./styles";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const SignUp = () => {
   const classes = useStyles();
@@ -215,9 +203,6 @@ const SignUp = () => {
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
   );
 };

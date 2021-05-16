@@ -20,20 +20,7 @@ import { getUser, setDataInLocalStorage } from '../helper';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { UserRole } from 'src/constants/roles';
-import logger from 'src/logger';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { logger } from 'src/logger';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -68,8 +55,7 @@ export default function SignIn() {
         .auth()
         .signInWithEmailAndPassword(values.email, values.password);
       if (loginInfo && loginInfo.user) {
-        logger.push({ error : "error", info : "info" });
-        //logger.info("User logged");
+        logger({tag: "info", msg: "Succesfully signed in"})
         const userData = await fire
           .firestore()
           .collection('user')
@@ -187,9 +173,6 @@ export default function SignIn() {
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }
