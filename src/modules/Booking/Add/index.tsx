@@ -59,6 +59,7 @@ const AddBooking = () => {
       .firestore()
       .collection('booking').add({
         pet:selectedPet.id,
+        petName:selectedPet.label,
         uid:user.uid,
         arrival,
         departure,

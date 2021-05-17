@@ -48,7 +48,7 @@ export default function BookingTable(props: Props) {
               <Typography>Status</Typography>
             </TableCell>
             <TableCell align="right">
-              <Typography>Total Fee</Typography>
+              <Typography>Client Notes</Typography>
             </TableCell>
             <TableCell align="right">
               <Typography>Reciept</Typography>
@@ -68,12 +68,12 @@ export default function BookingTable(props: Props) {
                 {booking.id}
               </TableCell>
               <TableCell component="th" scope="row">
-                {booking.pet}
+                {booking.petName}
               </TableCell>
               <TableCell align="right">{booking.arrival}</TableCell>
               <TableCell align="right">{booking.departure}</TableCell>
               <TableCell align="right">{booking.status}</TableCell>
-              <TableCell align="right">{booking.fee}</TableCell>
+              <TableCell align="right">{booking.clientNotes}</TableCell>
               <TableCell align="right">{booking.receipt}</TableCell>
               <TableCell align="right">{booking.createdOn}</TableCell>
               <TableCell align="right">

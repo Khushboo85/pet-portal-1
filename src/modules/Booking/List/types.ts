@@ -10,10 +10,12 @@ export interface PetData {
 
 export interface BookingDataInterface {
   id: string;
-  pet: string;
+  petId: string;
+  petName: string;
   arrival: string;
   departure: string;
   status: string;
+  clientNotes: string;
   fee: string;
   receipt: string;
   createdOn: string;
