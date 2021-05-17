@@ -25,7 +25,6 @@
     "formik": "^2.2.6",
     "fs": "0.0.1-security",
     "i": "^0.3.6",
-    "loggly-jslogger": "^2.2.4",
     "moment": "^2.29.1",
     "npm": "^7.9.0",
     "path": "^0.12.7",
@@ -46,7 +45,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test a",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -68,6 +67,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/preset-react": "^7.13.13",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "enzyme": "^3.11.0",
