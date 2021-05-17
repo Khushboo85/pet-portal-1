@@ -48,7 +48,7 @@ export default function SignIn() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   async function handleSubmit(values: any) {
-    console.log(values);
+    //console.log(values);
     try {
       setLoading(true);
       const loginInfo = await fire

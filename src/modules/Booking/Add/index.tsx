@@ -13,6 +13,7 @@ import { PetData } from '../../Pet/List/types';
 import { getPetOptions } from './helper';
 import useStyles from './styles';
 import { PetOptionInterface } from './types';
+import Typography from '@material-ui/core/Typography';
 
 const AddBooking = () => {
   const classes = useStyles();
@@ -77,6 +78,10 @@ const AddBooking = () => {
     setSelectedPet(pet);
   }
   return (
+    <div className={classes.paper}>
+        <Typography component="h1" variant="h5">
+          Booking Details
+        </Typography>
     <form className={classes.form} noValidate onSubmit={handleSubmit}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
@@ -150,6 +155,7 @@ const AddBooking = () => {
         Save Details
       </Button>
     </form>
+    </div>
   );
 };
 export default AddBooking;
